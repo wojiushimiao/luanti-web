@@ -1,0 +1,6 @@
+{
+  "name": "luanti-web",
+  "version": "0.1.0",
+  "description": "Luanti Web Engine - TypeScript voxel engine running in browser",
+  "type": "module"
+}
