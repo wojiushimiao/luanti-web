@@ -1,0 +1,750 @@
+{
+  "version": "1.0",
+  "generated": "2026-06-26",
+  "source": "d:\\Gaia\\11_参考项目\\luanti",
+  "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets",
+  "enhanced_size": 64,
+  "total_files": 89,
+  "categories": {
+    "basenodes": 33,
+    "procedural": 3,
+    "testnodes": 15,
+    "base_pack": 10,
+    "gltf_model": 14,
+    "gltf_texture": 4,
+    "testentities": 6,
+    "character_model": 4
+  },
+  "files": [
+    {
+      "name": "default_stone.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_stone.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_stone.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_desert_stone.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_desert_stone.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_desert_stone.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_dirt.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_dirt.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_dirt.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_grass.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_grass.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_grass.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_sand.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_sand.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_sand.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_desert_sand.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_desert_sand.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_desert_sand.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_gravel.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_gravel.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_gravel.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_cobble.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_cobble.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_cobble.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_mossycobble.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_mossycobble.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_mossycobble.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_tree.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_tree.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_tree.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_tree_top.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_tree_top.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_tree_top.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_jungletree.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_jungletree.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_jungletree.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_jungletree_top.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_jungletree_top.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_jungletree_top.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_pine_tree.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_pine_tree.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_pine_tree.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_pine_tree_top.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_pine_tree_top.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_pine_tree_top.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_leaves.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_leaves.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_leaves.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_jungleleaves.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_jungleleaves.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_jungleleaves.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_pine_needles.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_pine_needles.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_pine_needles.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_junglegrass.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_junglegrass.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_junglegrass.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_apple.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_apple.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_apple.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_ice.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_ice.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_ice.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_snow.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_snow.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_snow.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_snow_side.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_snow_side.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_snow_side.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_water.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_water.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_water.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_water_flowing.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_water_flowing.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_water_flowing.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_river_water.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_river_water.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_river_water.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_river_water_flowing.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_river_water_flowing.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_river_water_flowing.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_lava.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_lava.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_lava.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_lava_flowing.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\default_lava_flowing.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_lava_flowing.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "basenodes_dirt_with_grass_bottom.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\basenodes_dirt_with_grass_bottom.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\basenodes_dirt_with_grass_bottom.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "basenodes_dirt_with_snow.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\basenodes_dirt_with_snow.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\basenodes_dirt_with_snow.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "basenodes_dirt_with_snow_bottom.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\basenodes_dirt_with_snow_bottom.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\basenodes_dirt_with_snow_bottom.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "basenodes_snow_sheet.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\basenodes\\textures\\basenodes_snow_sheet.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\basenodes_snow_sheet.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "basenodes"
+    },
+    {
+      "name": "default_glass.png",
+      "source": "procedural",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_glass.png",
+      "enhanced_size": "64x64",
+      "mode": "procedural",
+      "category": "procedural"
+    },
+    {
+      "name": "default_mineral_coal.png",
+      "source": "procedural",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_mineral_coal.png",
+      "enhanced_size": "64x64",
+      "mode": "procedural",
+      "category": "procedural"
+    },
+    {
+      "name": "default_brick.png",
+      "source": "procedural",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\basenodes\\default_brick.png",
+      "enhanced_size": "64x64",
+      "mode": "procedural",
+      "category": "procedural"
+    },
+    {
+      "name": "testnodes_normal.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_normal.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_normal.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_glasslike.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_glasslike.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_glasslike.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_allfaces.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_allfaces.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_allfaces.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_plantlike.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_plantlike.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_plantlike.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_torchlike_floor.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_torchlike_floor.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_torchlike_floor.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_signlike.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_signlike.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_signlike.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_fencelike.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_fencelike.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_fencelike.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_firelike.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_firelike.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_firelike.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_liquidsource.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_liquidsource.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_liquidsource.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_liquidflowing.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_liquidflowing.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_liquidflowing.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_nodebox.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_nodebox.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_nodebox.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_mesh_stripes.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_mesh_stripes.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_mesh_stripes.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_alpha.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_alpha.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_alpha.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_light.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_light.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_light.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "testnodes_overlay.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testnodes\\textures\\testnodes_overlay.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\testnodes\\testnodes_overlay.png",
+      "original_size": "16x16",
+      "enhanced_size": "64x64",
+      "mode": "enhanced",
+      "category": "testnodes"
+    },
+    {
+      "name": "player.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\player.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\player.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "player_back.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\player_back.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\player_back.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "heart.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\heart.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\heart.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "heart_gone.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\heart_gone.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\heart_gone.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "bubble.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\bubble.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\bubble.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "bubble_gone.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\bubble_gone.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\bubble_gone.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "crack_anylength.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\crack_anylength.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\crack_anylength.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "wieldhand.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\wieldhand.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\wieldhand.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "unknown_node.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\unknown_node.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\unknown_node.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "unknown_item.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\textures\\base\\pack\\unknown_item.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\base\\unknown_item.png",
+      "mode": "copied",
+      "category": "base_pack"
+    },
+    {
+      "name": "gltf_blender_cube.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_blender_cube.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_blender_cube.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_blender_cube_matrix_transform.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_blender_cube_matrix_transform.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_blender_cube_matrix_transform.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_blender_cube_scaled.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_blender_cube_scaled.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_blender_cube_scaled.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_frog.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_frog.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_frog.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_minimal_triangle.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_minimal_triangle.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_minimal_triangle.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_simple_skin.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_simple_skin.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_simple_skin.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_simple_skin_step.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_simple_skin_step.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_simple_skin_step.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_simple_sparse_accessor.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_simple_sparse_accessor.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_simple_sparse_accessor.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_snow_man.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_snow_man.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_snow_man.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_spider.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_spider.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_spider.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_spider_animated.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_spider_animated.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_spider_animated.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_triangle_without_indices.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_triangle_without_indices.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_triangle_without_indices.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_triangle_with_vertex_stride.gltf",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_triangle_with_vertex_stride.gltf",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_triangle_with_vertex_stride.gltf",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_blender_cube.glb",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\models\\gltf_blender_cube.glb",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\gltf\\gltf_blender_cube.glb",
+      "mode": "copied",
+      "category": "gltf_model"
+    },
+    {
+      "name": "gltf_cube.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\textures\\gltf_cube.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\gltf\\gltf_cube.png",
+      "mode": "copied",
+      "category": "gltf_texture"
+    },
+    {
+      "name": "gltf_frog.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\textures\\gltf_frog.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\gltf\\gltf_frog.png",
+      "mode": "copied",
+      "category": "gltf_texture"
+    },
+    {
+      "name": "gltf_spider.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\textures\\gltf_spider.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\gltf\\gltf_spider.png",
+      "mode": "copied",
+      "category": "gltf_texture"
+    },
+    {
+      "name": "gltf_snow_man.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\gltf\\textures\\gltf_snow_man.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\gltf\\gltf_snow_man.png",
+      "mode": "copied",
+      "category": "gltf_texture"
+    },
+    {
+      "name": "testentities_sam.b3d",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_sam.b3d",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\entities\\testentities_sam.b3d",
+      "mode": "copied",
+      "category": "testentities"
+    },
+    {
+      "name": "testentities_sam.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_sam.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\entities\\testentities_sam.png",
+      "mode": "copied",
+      "category": "testentities"
+    },
+    {
+      "name": "testentities_lava_flan.x",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_lava_flan.x",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\entities\\testentities_lava_flan.x",
+      "mode": "copied",
+      "category": "testentities"
+    },
+    {
+      "name": "testentities_lava_flan.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_lava_flan.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\entities\\testentities_lava_flan.png",
+      "mode": "copied",
+      "category": "testentities"
+    },
+    {
+      "name": "testentities_cool_guy.x",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_cool_guy.x",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\entities\\testentities_cool_guy.x",
+      "mode": "copied",
+      "category": "testentities"
+    },
+    {
+      "name": "testentities_cool_guy.png",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_cool_guy.png",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\textures\\entities\\testentities_cool_guy.png",
+      "mode": "copied",
+      "category": "testentities"
+    },
+    {
+      "name": "character.glb",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testformspec\\models\\testformspec_character.b3d",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\\\character.glb",
+      "mode": "converted",
+      "converter": "b3d",
+      "texture": "player.png",
+      "category": "character_model"
+    },
+    {
+      "name": "sam.glb",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_sam.b3d",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\\\sam.glb",
+      "mode": "converted",
+      "converter": "b3d",
+      "texture": "testentities_sam.png",
+      "category": "character_model"
+    },
+    {
+      "name": "lava_flan.glb",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_lava_flan.x",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\\\lava_flan.glb",
+      "mode": "converted",
+      "converter": "x",
+      "texture": "testentities_lava_flan.png",
+      "category": "character_model"
+    },
+    {
+      "name": "cool_guy.glb",
+      "source": "d:\\Gaia\\11_参考项目\\luanti\\games\\devtest\\mods\\testentities\\models\\testentities_cool_guy.x",
+      "target": "d:\\Gaia\\07_子项目代码\\luanti_web\\public\\assets\\models\\\\cool_guy.glb",
+      "mode": "converted",
+      "converter": "x",
+      "texture": "testentities_cool_guy.png",
+      "category": "character_model"
+    }
+  ]
+}

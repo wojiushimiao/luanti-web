@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Luanti Web Engine</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: #87CEEB;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      touch-action: none;
+    }
+
+    /* === L0: 3D Canvas === */
+    #game-canvas {
+      display: block; width: 100%; height: 100%;
+      position: absolute; top: 0; left: 0; z-index: 0;
+    }
+
+    /* === L5: 虚拟按键层（移动端） === */
+    #virtual-gamepad {
+      position: absolute; inset: 0; z-index: 5;
+      pointer-events: none; display: none;
+    }
+    #virtual-gamepad.visible { display: block; }
+    #stick-zone {
+      position: absolute; bottom: 30px; left: 30px;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.4);
+      pointer-events: auto; touch-action: none;
+    }
+    #stick-knob {
+      position: absolute; top: 50%; left: 50%;
+      width: 50px; height: 50px; border-radius: 50%;
+      background: rgba(255,255,255,0.5); border: 2px solid rgba(255,255,255,0.8);
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s;
+    }
+    #button-zone {
+      position: absolute; bottom: 30px; right: 30px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      pointer-events: auto;
+    }
+    #button-zone button {
+      width: 60px; height: 60px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.4);
+      background: rgba(0,0,0,0.3); color: #fff;
+      font-size: 24px; cursor: pointer;
+      touch-action: none; user-select: none;
+    }
+    #button-zone button:active { background: rgba(255,255,255,0.3); }
+
+    /* S-04 移动端热栏切换按钮 */
+    #hotbar-controls {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 12px;
+      pointer-events: auto;
+    }
+    #hotbar-controls button {
+      width: 50px; height: 50px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.4);
+      background: rgba(0,0,0,0.3); color: #fff;
+      font-size: 20px; cursor: pointer;
+      touch-action: none; user-select: none;
+    }
+    #hotbar-controls button:active { background: rgba(255,255,255,0.3); }
+
+    /* === L10: HUD 层 === */
+    #hud-canvas {
+      display: block; width: 100%; height: 100%;
+      position: absolute; top: 0; left: 0; z-index: 10;
+      pointer-events: none;
+    }
+    #info-panel {
+      position: absolute; top: 8px; left: 8px; z-index: 10;
+      color: #fff; font-family: monospace; font-size: 13px;
+      background: rgba(0,0,0,0.5); padding: 6px 10px;
+      border-radius: 4px; pointer-events: none;
+      line-height: 1.6; white-space: pre;
+    }
+
+    /* === L50: 屏幕（介绍页/模组加载页） === */
+    .screen {
+      position: absolute; inset: 0; z-index: 50;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: rgba(10,20,40,0.9);
+      overflow-y: auto;
+    }
+    .screen.hidden { display: none; }
+
+    /* 介绍页 */
+    #intro-screen h1 {
+      color: #fff; font-size: 32px; margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    #intro-screen p {
+      color: #ccc; font-size: 15px; margin-bottom: 8px; max-width: 500px; text-align: center;
+    }
+    #intro-screen .btn-group { margin-top: 24px; display: flex; gap: 16px; }
+    .btn-primary {
+      padding: 12px 32px; font-size: 16px; border: none; border-radius: 6px;
+      background: #4a8; color: #fff; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #5c9; }
+    .btn-secondary {
+      padding: 12px 32px; font-size: 16px; border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px; background: transparent; color: #ccc; cursor: pointer;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    /* 模组加载页 */
+    #modloading-screen { padding: 20px; }
+    #modloading-screen h2 { color: #fff; margin-bottom: 16px; }
+    #mod-tabs {
+      display: flex; gap: 4px; margin-bottom: 16px;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+    .mod-tab {
+      padding: 8px 16px; color: #aaa; cursor: pointer;
+      border: none; background: transparent; font-size: 14px;
+    }
+    .mod-tab.active { color: #fff; border-bottom: 2px solid #4a8; }
+    #mod-content {
+      width: 100%; max-width: 600px; min-height: 200px; max-height: 400px;
+      overflow-y: auto; background: rgba(0,0,0,0.3); border-radius: 6px; padding: 12px;
+    }
+    .mod-item {
+      display: flex; align-items: center; gap: 8px; padding: 6px 0;
+      color: #ddd; font-size: 14px;
+    }
+    .mod-item input[type="checkbox"] { width: 18px; height: 18px; }
+    .mod-item .mod-desc { color: #888; font-size: 12px; }
+    #mod-url-input, #mod-clipboard-input {
+      width: 100%; padding: 8px; margin: 8px 0;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px; color: #fff; font-size: 14px;
+    }
+    #mod-clipboard-input { min-height: 80px; resize: vertical; font-family: monospace; }
+    #mod-progress {
+      width: 100%; max-width: 600px; margin-top: 12px;
+      display: none;
+    }
+    #mod-progress.visible { display: block; }
+    .progress-bar {
+      width: 100%; height: 20px; background: rgba(0,0,0,0.3);
+      border-radius: 10px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: #4a8; transition: width 0.3s;
+    }
+    #progress-text { color: #ccc; font-size: 13px; margin-top: 4px; text-align: center; }
+    #modloading-screen .btn-group { margin-top: 16px; display: flex; gap: 12px; }
+
+    /* === L60: 设置菜单 === */
+    #settings-menu { padding: 20px; }
+    #settings-menu h2 { color: #fff; margin-bottom: 16px; }
+    #settings-tabs {
+      display: flex; gap: 4px; margin-bottom: 16px;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+    .settings-tab {
+      padding: 8px 16px; color: #aaa; cursor: pointer;
+      border: none; background: transparent; font-size: 14px;
+    }
+    .settings-tab.active { color: #fff; border-bottom: 2px solid #4a8; }
+    #settings-content {
+      width: 100%; max-width: 500px; min-height: 200px;
+      background: rgba(0,0,0,0.3); border-radius: 6px; padding: 16px;
+    }
+    .setting-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 0; color: #ddd; font-size: 14px;
+    }
+    .setting-row input[type="range"] { width: 200px; }
+    .setting-row input[type="number"] { width: 60px; padding: 4px; }
+    .setting-row select { padding: 4px; }
+    .keybind-list { color: #ccc; font-size: 13px; line-height: 1.8; }
+    .keybind-list kbd {
+      display: inline-block; min-width: 24px; padding: 2px 6px; margin: 0 2px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 3px; font-family: monospace; font-size: 12px; color: #fff;
+    }
+    #save-import-input {
+      width: 100%; min-height: 60px; padding: 8px; margin: 8px 0;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px; color: #fff; font-family: monospace; font-size: 12px;
+      resize: vertical;
+    }
+    #settings-menu .btn-group { margin-top: 16px; display: flex; gap: 12px; }
+
+    /* === L30: Toast 通知 === */
+    #toast-container {
+      position: absolute; top: 50%; left: 50%; transform: translateX(-50%);
+      z-index: 30; display: flex; flex-direction: column; gap: 8px;
+      pointer-events: none;
+    }
+    .toast {
+      padding: 10px 20px; background: rgba(0,0,0,0.8); color: #fff;
+      border-radius: 6px; font-size: 14px; text-align: center;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* === 响应式 === */
+    @media (max-width: 767px) {
+      #intro-screen h1 { font-size: 24px; }
+      #intro-screen p { font-size: 13px; }
+      .btn-primary, .btn-secondary { padding: 10px 24px; font-size: 14px; }
+      #button-zone button { width: 50px; height: 50px; font-size: 20px; }
+      #stick-zone { width: 100px; height: 100px; }
+      #info-panel { font-size: 11px; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      #button-zone button { width: 56px; height: 56px; font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      #virtual-gamepad { display: none !important; }
+    }
+
+    /* FIX-8: 背包与合成界面 */
+    #inventory-screen {
+      position: absolute; inset: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.85);
+    }
+    #inventory-screen.hidden { display: none; }
+    /* FIX-17: 聊天框隐藏规则 */
+    #chat-screen.hidden { display: none; }
+    #inventory-content {
+      display: flex; gap: 24px; padding: 20px;
+      background: #1a2a3a; border-radius: 8px; border: 2px solid #3a4a5a;
+      max-width: 95vw; max-height: 90vh; overflow: auto;
+    }
+    .inv-section { display: flex; flex-direction: column; gap: 8px; }
+    .inv-title { color: #aaa; font-size: 14px; font-weight: bold; }
+    .inv-grid { display: grid; grid-template-columns: repeat(9, 40px); gap: 2px; }
+    .inv-slot {
+      width: 40px; height: 40px; background: #2a3a4a; border: 1px solid #4a5a6a;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; user-select: none;
+    }
+    .inv-slot:hover { border-color: #fff; }
+    .inv-slot.hotbar-active { border-color: #ff0; box-shadow: 0 0 4px #ff0; }
+    .craft-area { display: flex; align-items: center; gap: 12px; }
+    .craft-grid { display: grid; grid-template-columns: repeat(3, 40px); gap: 2px; }
+    .craft-arrow { color: #fff; font-size: 24px; }
+    .craft-out { border-color: #4a8 !important; }
+  </style>
+  <script type="module" crossorigin src="/assets/index-CDSdlnjB.js"></script>
+</head>
+<body>
+  <!-- L0: 3D Canvas -->
+  <canvas id="game-canvas"></canvas>
+
+  <!-- L5: 虚拟按键层（移动端） -->
+  <div id="virtual-gamepad">
+    <div id="stick-zone">
+      <div id="stick-knob"></div>
+    </div>
+    <div id="hotbar-controls">
+      <button id="btn-hotbar-prev" title="上一个槽位">◀</button>
+      <button id="btn-hotbar-next" title="下一个槽位">▶</button>
+    </div>
+    <div id="button-zone">
+      <button id="btn-dig" title="挖掘">⛏</button>
+      <button id="btn-place" title="放置">⬛</button>
+      <button id="btn-jump" title="跳跃">⬆</button>
+      <button id="btn-sneak" title="潜行">⬇</button>
+    </div>
+  </div>
+
+  <!-- L10: HUD 层 -->
+  <canvas id="hud-canvas"></canvas>
+  <div id="info-panel">Luanti Web Engine</div>
+
+  <!-- L30: Toast 通知 -->
+  <div id="toast-container"></div>
+
+  <!-- L50: 介绍页 -->
+  <div id="intro-screen" class="screen">
+    <h1>Luanti Web Engine</h1>
+    <p>基于浏览器的体素游戏引擎，支持 Lua 模组、物理碰撞、第一人称视角。</p>
+    <p>选择"开始游戏"加载模组并进入世界，或"读取存档"从剪贴板导入存档。</p>
+    <div class="btn-group">
+      <button id="btn-start" class="btn-primary">开始游戏</button>
+      <button id="btn-load-save" class="btn-secondary">读取存档</button>
+    </div>
+  </div>
+
+  <!-- L50: 模组加载页 -->
+  <div id="modloading-screen" class="screen hidden">
+    <h2>模组加载</h2>
+    <div id="mod-tabs">
+      <button class="mod-tab active" data-tab="builtin">内置模组</button>
+      <button class="mod-tab" data-tab="community" style="display:none">社区模组</button>
+      <button class="mod-tab" data-tab="url" style="display:none">URL 下载</button>
+      <button class="mod-tab" data-tab="clipboard" style="display:none">剪贴板</button>
+    </div>
+    <div id="world-settings" style="width:100%;max-width:600px;margin-bottom:12px;background:rgba(0,0,0,0.3);border-radius:6px;padding:12px;">
+      <div style="color:#ccc;font-size:14px;margin-bottom:8px;font-weight:bold;">世界设置</div>
+      <div class="setting-row">
+        <span>世界种子</span>
+        <input type="number" id="world-seed" value="12345" style="width:120px;padding:4px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:4px;color:#fff;font-size:14px;">
+        <button id="btn-random-seed" class="btn-primary" style="padding:4px 12px;font-size:13px;">随机</button>
+      </div>
+      <div class="setting-row">
+        <span>游戏模式</span>
+        <select id="game-mode" style="padding:4px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:4px;color:#fff;font-size:14px;">
+          <option value="survival" selected>生存模式</option>
+          <option value="creative">创造模式</option>
+        </select>
+      </div>
+    </div>
+    <div id="mod-content"></div>
+    <div id="mod-progress">
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+      <div id="progress-text"></div>
+    </div>
+    <div class="btn-group">
+      <button id="btn-start-game" class="btn-primary">开始游戏</button>
+      <button id="btn-back-intro" class="btn-secondary">返回</button>
+    </div>
+  </div>
+
+  <!-- L60: 设置菜单 -->
+  <div id="settings-menu" class="screen hidden">
+    <h2>设置</h2>
+    <div id="settings-tabs">
+      <button class="settings-tab active" data-tab="save">存档管理</button>
+      <button class="settings-tab" data-tab="graphics">画面</button>
+      <button class="settings-tab" data-tab="audio">音频</button>
+      <button class="settings-tab" data-tab="controls">按键</button>
+    </div>
+    <div id="settings-content"></div>
+    <div class="btn-group">
+      <button id="btn-back-game" class="btn-primary">返回</button>
+    </div>
+  </div>
+
+  <!-- FIX-8: 背包与合成界面 -->
+  <div id="inventory-screen" class="hidden">
+    <div id="inventory-content"></div>
+  </div>
+
+  <!-- FIX-41: 死亡画面 -->
+  <div id="death-screen" class="screen hidden">
+    <h2 style="color:#ff4444;font-size:36px;margin-bottom:16px;">你已死亡</h2>
+    <p style="color:#ccc;margin-bottom:24px;">点击下方按钮重生</p>
+    <div class="btn-group">
+      <button id="btn-respawn" class="btn-primary">重生</button>
+    </div>
+  </div>
+
+</body>
+</html>
